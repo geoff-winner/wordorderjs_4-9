@@ -1,23 +1,11 @@
-describe('scrabbler', function(){
+describe('wordorder', function(){
 
-    it("returns 1 for an entry of the word 'A'.", function(){
-        expect(scrabbler("A")).to.equal(1);
+    it("for string 'The Lord of the Rings' return ['THE','LORD', 'OF', 'RINGS']", function(){
+        expect(wordorder("The Lord of the Rings")).to.deep.equal(['THE','LORD', 'OF', 'RINGS']);
     });
 
-    it("returns 1 for an entry of the word 'E'.", function(){
-        expect(scrabbler("E")).to.equal(1);
-    });
-
-    it("returns 2 for an entry of the word 'AE'.", function(){
-        expect(scrabbler("AE")).to.equal(2);
-    });
-
-    it("returns 4 for an entry of the word 'F'.", function(){
-        expect(scrabbler("F")).to.equal(4);
-    });
-
-    it("returns 13 for an entry of the word 'fox'.", function(){
-        expect(scrabbler("fox")).to.equal(13);
+    it("for string 'The Lord of the Rings Rings Rings' return ['RINGS', 'THE','LORD', 'OF']", function(){
+        expect(wordorder("The Lord of the Rings Rings Rings")).to.deep.equal(['RINGS', 'THE','LORD', 'OF']);
     });
 
 
